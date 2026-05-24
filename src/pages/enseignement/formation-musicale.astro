@@ -12,58 +12,11 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ======================================================
-       CHOIX DE PHOTO — À supprimer une fois la photo choisie
-       ====================================================== -->
-  <section class="section section-alt" style="padding:40px 0;">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:24px;">
-        <span class="hero-label" style="color:var(--gold-dark);">Choix de photo — section intro</span>
-        <p style="color:var(--text-muted); margin-top:8px; font-size:0.9rem;">Choisissez la photo à conserver dans la section intro ci-dessous — les autres seront supprimées.</p>
-      </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
-
-        <div style="position:relative; border-radius:8px; overflow:hidden; box-shadow:var(--shadow);">
-          <div style="position:absolute; top:10px; left:10px; background:var(--gold); color:#fff; font-weight:700; font-size:1.1rem; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:1;">1</div>
-          <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=500&q=80" alt="Partitions musicales — photo du bandeau" loading="lazy" style="width:100%; height:200px; object-fit:cover; display:block;">
-          <div style="padding:8px 12px; font-size:0.8rem; color:var(--text-muted); background:#fff;">Partitions musicales <em>(celle du bandeau)</em></div>
-        </div>
-
-        <div style="position:relative; border-radius:8px; overflow:hidden; box-shadow:var(--shadow);">
-          <div style="position:absolute; top:10px; left:10px; background:var(--gold); color:#fff; font-weight:700; font-size:1.1rem; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:1;">2</div>
-          <img src="https://images.pexels.com/photos/210804/pexels-photo-210804.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Livre de partitions ouvert" loading="lazy" style="width:100%; height:200px; object-fit:cover; display:block;">
-          <div style="padding:8px 12px; font-size:0.8rem; color:var(--text-muted); background:#fff;">Livre de partitions ouvert</div>
-        </div>
-
-        <div style="position:relative; border-radius:8px; overflow:hidden; box-shadow:var(--shadow);">
-          <div style="position:absolute; top:10px; left:10px; background:var(--gold); color:#fff; font-weight:700; font-size:1.1rem; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:1;">3</div>
-          <img src="https://images.pexels.com/photos/4186247/pexels-photo-4186247.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Notes classiques gros plan sur partition" loading="lazy" style="width:100%; height:200px; object-fit:cover; display:block;">
-          <div style="padding:8px 12px; font-size:0.8rem; color:var(--text-muted); background:#fff;">Notes classiques — gros plan</div>
-        </div>
-
-        <div style="position:relative; border-radius:8px; overflow:hidden; box-shadow:var(--shadow);">
-          <div style="position:absolute; top:10px; left:10px; background:var(--gold); color:#fff; font-weight:700; font-size:1.1rem; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:1;">4</div>
-          <img src="https://images.pexels.com/photos/29976445/pexels-photo-29976445.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Partitions manuscrites noir et blanc" loading="lazy" style="width:100%; height:200px; object-fit:cover; display:block;">
-          <div style="padding:8px 12px; font-size:0.8rem; color:var(--text-muted); background:#fff;">Partitions manuscrites — noir et blanc</div>
-        </div>
-
-        <div style="position:relative; border-radius:8px; overflow:hidden; box-shadow:var(--shadow);">
-          <div style="position:absolute; top:10px; left:10px; background:var(--gold); color:#fff; font-weight:700; font-size:1.1rem; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:1;">5</div>
-          <img src="https://images.pexels.com/photos/30818639/pexels-photo-30818639.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Symboles musicaux sur partition" loading="lazy" style="width:100%; height:200px; object-fit:cover; display:block;">
-          <div style="padding:8px 12px; font-size:0.8rem; color:var(--text-muted); background:#fff;">Symboles musicaux sur partition</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- ====================================================== -->
-
   <!-- INTRO -->
   <section class="section">
     <div class="container">
       <div class="bio-intro reveal">
         <div class="bio-intro-image">
-          <!-- Remplacer l'URL ci-dessous par la photo choisie (1 à 5) puis supprimer la section "Choix de photo" ci-dessus -->
           <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=700&q=80" alt="Cours de formation musicale" loading="lazy">
         </div>
         <div class="bio-intro-text">
