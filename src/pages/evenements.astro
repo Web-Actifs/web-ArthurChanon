@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import eventsImg from '../pics/events.jpg';
+import accroupiImg from '../pics/Accroupi.jpg';
 ---
 
 <Layout title="Événements & Booking" description="Prestations de clarinette solo pour événements privés et professionnels — soirées, mariages, galas, cérémonies — à Bruxelles, en Belgique et en France.">
@@ -174,11 +175,22 @@ import eventsImg from '../pics/events.jpg';
     </div>
   </section>
 
-  <section class="section" style="padding:64px 0;">
+  <section class="section section-alt" style="padding:64px 0;">
     <div class="container" style="text-align:center;">
+      <figure style="max-width:700px; margin:0 auto 64px;">
+        <img
+          src={accroupiImg.src}
+          alt="Arthur Reynaud-Chanon lors d'une prestation au château Saint-Roch"
+          loading="lazy"
+          style="width:100%; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.12);"
+        >
+        <figcaption style="margin-top:12px; font-size:0.85rem; color:var(--text-muted); font-style:italic;">
+          Lors d'une prestation au château Saint-Roch, à Ciney (Belgique).
+        </figcaption>
+      </figure>
       <h2 style="color:var(--navy); margin-bottom:16px;">Un projet d'événement ?</h2>
       <p style="color:var(--text-muted); font-weight:300; margin-bottom:32px;">Contactez-moi pour discuter de votre événement et construire ensemble la prestation idéale.</p>
-      <a href="/complements#contact" class="btn btn-primary">Prendre contact</a>
+      <a href="/contact" class="btn btn-primary">Prendre contact</a>
     </div>
   </section>
 
