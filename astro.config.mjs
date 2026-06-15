@@ -1,5 +1,10 @@
 import { defineConfig } from 'astro/config';
 
+import sitemap from '@astrojs/sitemap';
+
 export default defineConfig({
-  site: 'https://votre-domaine.com', // ← à remplacer par l'URL de production
+  // ← à remplacer par l'URL de production
+  site: 'https://votre-domaine.com',
+
+  integrations: [sitemap()]
 });
