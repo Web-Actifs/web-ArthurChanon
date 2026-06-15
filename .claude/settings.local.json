@@ -15,7 +15,16 @@
       "Bash(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\gui\\\\.claude\\\\projects\\\\C--gui-web-2026-ArthurChanon2\\\\memory\")",
       "Bash(Out-Null)",
       "PowerShell(New-Item *)",
-      "WebFetch(domain:www.pexels.com)"
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(xargs sed -i 's|/complements#contact|/contact|g')",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(mkdir -p \"C:/gui/web/2026/ArthurChanon2/src/pages/_archive\")",
+      "Bash(mv \"C:/gui/web/2026/ArthurChanon2/src/pages/agenda.astro\" \"C:/gui/web/2026/ArthurChanon2/src/pages/_archive/\")",
+      "Bash(mv \"C:/gui/web/2026/ArthurChanon2/src/pages/biographie.astro\" \"C:/gui/web/2026/ArthurChanon2/src/pages/_archive/\")",
+      "Bash(mv \"C:/gui/web/2026/ArthurChanon2/src/pages/galerie.astro\" \"C:/gui/web/2026/ArthurChanon2/src/pages/_archive/\")",
+      "Bash(mv \"C:/gui/web/2026/ArthurChanon2/src/pages/temoignages.astro\" \"C:/gui/web/2026/ArthurChanon2/src/pages/_archive/\")",
+      "PowerShell(npm show *)"
     ]
   }
 }
