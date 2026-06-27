@@ -1,8 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Respiration et relaxation",
+  "serviceType": "Cours particulier de musique",
+  "description": "Travail sur la respiration, la posture, la sophrologie et la gestion du trac — discipline transversale bénéfique à tous les instrumentistes, enseignée à Bruxelles et à distance.",
+  "provider": { "@type": "Person", "@id": "https://arthur-reynaud-chanon.be/#arthur", "name": "Arthur Reynaud-Chanon" },
+  "areaServed": [{ "@type": "City", "name": "Bruxelles" }, { "@type": "Country", "name": "Belgique" }, { "@type": "Country", "name": "France" }],
+  "availableLanguage": ["French", "English", "Polish", "Spanish"],
+  "url": "https://arthur-reynaud-chanon.be/enseignement/respiration"
+};
 ---
 
 <Layout title="Respiration et relaxation" description="Respiration, posture et gestion du trac avec Arthur Reynaud-Chanon — cours en présentiel à Bruxelles, en Belgique et en France, ou à distance.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+  </Fragment>
 
   <section class="page-hero">
     <div class="container page-hero-content">

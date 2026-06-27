@@ -1,4 +1,35 @@
 User-agent: *
 Allow: /
 
+# Bots IA — explicitement autorisés pour la visibilité dans les réponses IA
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://arthur-reynaud-chanon.be/sitemap-index.xml

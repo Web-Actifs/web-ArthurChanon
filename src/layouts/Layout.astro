@@ -5,20 +5,110 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
   type?: 'website' | 'article';
+  preloadImage?: string;
 }
 
 const {
   title,
   description = "Professeur de clarinette et de formation musicale — cours en présentiel et à distance, à Bruxelles, en Belgique et en France.",
   image = "/og-arthur.jpg",
+  imageAlt,
   type = "website",
+  preloadImage,
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
 const siteUrl = Astro.site ? Astro.site.href.replace(/\/$/, '') : '';
 const canonicalUrl = `${siteUrl}${pathname}`;
 const ogImageUrl = `${siteUrl}${image}`;
+const ogImageAlt = imageAlt ?? `${title} — Arthur Reynaud-Chanon`;
+
+const pathToLabel: Record<string, string> = {
+  '/presentation': 'Présentation',
+  '/enseignement': 'Enseignement',
+  '/enseignement/clarinette': 'Cours de clarinette',
+  '/enseignement/saxophone': 'Cours de saxophone',
+  '/enseignement/formation-musicale': 'Cours de formation musicale',
+  '/enseignement/piano': 'Initiation au piano',
+  '/enseignement/chant': 'Initiation au chant',
+  '/enseignement/respiration': 'Respiration et relaxation',
+  '/evenements': 'Événements & Booking',
+  '/complements': 'Avis & Vidéos',
+  '/contact': 'Contact',
+  '/mentions-legales': 'Mentions légales',
+};
+
+const breadcrumbItems: Array<{ '@type': string; position: number; name: string; item: string }> = [];
+if (pathname !== '/') {
+  breadcrumbItems.push({ '@type': 'ListItem', position: 1, name: 'Accueil', item: `${siteUrl}/` });
+  let currentPath = '';
+  pathname.split('/').filter(Boolean).forEach((part, i) => {
+    currentPath += '/' + part;
+    breadcrumbItems.push({
+      '@type': 'ListItem',
+      position: i + 2,
+      name: pathToLabel[currentPath] ?? part,
+      item: `${siteUrl}${currentPath}`,
+    });
+  });
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#arthur`,
+      "name": "Arthur Reynaud-Chanon",
+      "jobTitle": "Professeur de clarinette et de formation musicale",
+      "url": siteUrl,
+      "email": "arthur.lamusic@hotmail.fr",
+      "telephone": ["+33633184584", "+32473447186"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Bruxelles", "addressCountry": "BE" },
+      "knowsLanguage": ["fr", "en", "pl", "es"],
+      "knowsAbout": ["clarinette", "saxophone", "formation musicale", "piano", "chant"],
+      "image": ogImageUrl,
+      "description": "Professeur de clarinette, saxophone et formation musicale, clarinettiste soliste et chambriste. Cours en présentiel à Bruxelles, en Belgique et en France, et à distance dans le monde entier.",
+      "sameAs": [
+        "https://www.facebook.com/share/18w51J1m97",
+        "https://www.instagram.com/arthur.rc.clarinetttiste",
+        "https://www.apprentus.be/cours-particuliers/bruxelles/musique/clarinette/apprendre-clarinette-solfege-a-domicile?from_landing_page=true",
+        "https://www.superprof.be/clarinettiste-professeur-clarinette-formation-musicale-diplome-deux-domaines-donne-cours-clarinette.html"
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "EducationalOrganization"],
+      "@id": `${siteUrl}/#business`,
+      "name": "Arthur Reynaud-Chanon — Cours de musique",
+      "url": siteUrl,
+      "email": "arthur.lamusic@hotmail.fr",
+      "telephone": "+32473447186",
+      "address": { "@type": "PostalAddress", "addressLocality": "Bruxelles", "addressCountry": "BE" },
+      "areaServed": [{ "@type": "Country", "name": "Belgique" }, { "@type": "Country", "name": "France" }],
+      "priceRange": "€€",
+      "founder": { "@id": `${siteUrl}/#arthur` },
+      "image": ogImageUrl,
+      "description": "Cours particuliers de clarinette, saxophone, formation musicale, piano, chant et respiration à Bruxelles et à distance. Prestations événementielles en Belgique et en France.",
+      "sameAs": ["https://www.facebook.com/share/18w51J1m97", "https://www.instagram.com/arthur.rc.clarinetttiste"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Cours de musique",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cours de clarinette" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cours de saxophone" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cours de formation musicale" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Initiation au piano" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Initiation au chant" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cours de respiration" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prestation clarinette solo" } }
+        ]
+      }
+    },
+    ...(breadcrumbItems.length > 1 ? [{ "@type": "BreadcrumbList", "itemListElement": breadcrumbItems }] : [])
+  ]
+};
 
 interface NavChild { href: string; label: string; }
 interface NavItem  { href?: string; label: string; children?: NavChild[]; }
@@ -67,6 +157,10 @@ function isActive(href: string | undefined) {
   <!-- Canonical -->
   <link rel="canonical" href={canonicalUrl}>
 
+  <!-- Référencement local -->
+  <meta name="geo.region" content="BE-BRU">
+  <meta name="geo.placename" content="Bruxelles, Belgique">
+
   <!-- Open Graph (partage réseaux sociaux) -->
   <meta property="og:type" content={type}>
   <meta property="og:site_name" content="Arthur Reynaud-Chanon">
@@ -76,6 +170,7 @@ function isActive(href: string | undefined) {
   <meta property="og:image" content={ogImageUrl}>
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content={ogImageAlt}>
   <meta property="og:locale" content="fr_BE">
 
   <!-- Twitter / X Card -->
@@ -83,26 +178,16 @@ function isActive(href: string | undefined) {
   <meta name="twitter:title" content={`${title} — Arthur Reynaud-Chanon`}>
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={ogImageUrl}>
+  <meta name="twitter:image:alt" content={ogImageAlt}>
 
-  <!-- JSON-LD : fiche personne pour Google -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Arthur Reynaud-Chanon",
-    "jobTitle": "Professeur de clarinette et de formation musicale",
-    "url": siteUrl,
-    "email": "arthur.lamusic@hotmail.fr",
-    "telephone": ["+33633184584", "+32473447186"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bruxelles",
-      "addressCountry": "BE"
-    },
-    "knowsLanguage": ["fr", "en", "pl", "es"],
-    "knowsAbout": ["clarinette", "saxophone", "formation musicale", "piano", "chant"],
-    "image": ogImageUrl,
-    "description": "Professeur de clarinette, saxophone et formation musicale, clarinettiste soliste et chambriste. Cours en présentiel à Bruxelles, en Belgique et en France, et à distance dans le monde entier."
-  })} />
+  <!-- JSON-LD : entités structurées (Person, LocalBusiness, fil d'Ariane) -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <!-- Slot pour JSON-LD spécifique à chaque page (Service, Event…) -->
+  <slot name="head" />
+
+  <!-- Préchargement image hero (Core Web Vitals LCP) -->
+  {preloadImage && <link rel="preload" as="image" href={preloadImage}>}
 
   <!-- Polices -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

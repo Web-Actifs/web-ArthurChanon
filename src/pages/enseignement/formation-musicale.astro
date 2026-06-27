@@ -1,8 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Cours de formation musicale",
+  "serviceType": "Cours particulier de musique",
+  "description": "Cours de solfège et formation musicale à Bruxelles — lecture de partitions, rythme, dictée musicale, développement de l'oreille et harmonie. De débutant à niveau conservatoire.",
+  "provider": { "@type": "Person", "@id": "https://arthur-reynaud-chanon.be/#arthur", "name": "Arthur Reynaud-Chanon" },
+  "areaServed": [{ "@type": "City", "name": "Bruxelles" }, { "@type": "Country", "name": "Belgique" }, { "@type": "Country", "name": "France" }],
+  "availableLanguage": ["French", "English", "Polish", "Spanish"],
+  "url": "https://arthur-reynaud-chanon.be/enseignement/formation-musicale"
+};
 ---
 
 <Layout title="Cours de formation musicale" description="Cours de formation musicale à Bruxelles — lecture, rythme, oreille et chant avec Arthur Reynaud-Chanon, en présentiel en Belgique et en France ou à distance.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+  </Fragment>
 
   <section class="page-hero">
     <div class="container page-hero-content">

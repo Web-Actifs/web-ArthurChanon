@@ -1,8 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Initiation au piano",
+  "serviceType": "Cours particulier de musique",
+  "description": "Cours de piano à Bruxelles — répertoire adapté à l'élève, tous âges, en complément d'un autre instrument ou en cursus autonome.",
+  "provider": { "@type": "Person", "@id": "https://arthur-reynaud-chanon.be/#arthur", "name": "Arthur Reynaud-Chanon" },
+  "areaServed": [{ "@type": "City", "name": "Bruxelles" }, { "@type": "Country", "name": "Belgique" }, { "@type": "Country", "name": "France" }],
+  "availableLanguage": ["French", "English", "Polish", "Spanish"],
+  "url": "https://arthur-reynaud-chanon.be/enseignement/piano"
+};
 ---
 
 <Layout title="Initiation au piano" description="Initiation au piano avec Arthur Reynaud-Chanon à Bruxelles — répertoire adapté, tous âges, présentiel en Belgique et en France ou à distance.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+  </Fragment>
 
   <section class="page-hero">
     <div class="container page-hero-content">

@@ -2,9 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import eventsImg from '../pics/events.jpg';
 import accroupiImg from '../pics/Accroupi.jpg';
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Prestation clarinette solo — Événements",
+  "serviceType": "Prestation musicale événementielle",
+  "description": "Prestation de clarinette solo pour événements privés et professionnels — soirées, mariages, galas, cérémonies, cocktails. Répertoire classique, jazz, pop et musiques de films. Disponible à Bruxelles, en Belgique et en France.",
+  "provider": { "@type": "Person", "@id": "https://arthur-reynaud-chanon.be/#arthur", "name": "Arthur Reynaud-Chanon" },
+  "areaServed": [{ "@type": "City", "name": "Bruxelles" }, { "@type": "Country", "name": "Belgique" }, { "@type": "Country", "name": "France" }],
+  "availableLanguage": ["French", "English", "Polish", "Spanish"],
+  "url": "https://arthur-reynaud-chanon.be/evenements"
+};
 ---
 
 <Layout title="Événements & Booking" description="Prestations de clarinette solo pour événements privés et professionnels — soirées, mariages, galas, cérémonies — à Bruxelles, en Belgique et en France.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+  </Fragment>
 
   <section class="page-hero">
     <div class="container page-hero-content">

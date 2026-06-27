@@ -1,8 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Initiation au chant",
+  "serviceType": "Cours particulier de musique",
+  "description": "Initiation au chant à Bruxelles — travail de la voix, du souffle et de l'intonation, intégré à la pédagogie musicale globale d'Arthur Reynaud-Chanon.",
+  "provider": { "@type": "Person", "@id": "https://arthur-reynaud-chanon.be/#arthur", "name": "Arthur Reynaud-Chanon" },
+  "areaServed": [{ "@type": "City", "name": "Bruxelles" }, { "@type": "Country", "name": "Belgique" }, { "@type": "Country", "name": "France" }],
+  "availableLanguage": ["French", "English", "Polish", "Spanish"],
+  "url": "https://arthur-reynaud-chanon.be/enseignement/chant"
+};
 ---
 
 <Layout title="Initiation au chant" description="Initiation au chant intégrée aux cours de clarinette et de formation musicale avec Arthur Reynaud-Chanon à Bruxelles, en Belgique et en France.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+  </Fragment>
 
   <section class="page-hero">
     <div class="container page-hero-content">

@@ -3,7 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import arthurPhoto from '../pics/Arthur.jpg';
 ---
 
-<Layout title="Cours de clarinette à Bruxelles" description="Arthur Reynaud-Chanon, professeur de clarinette et de formation musicale à Bruxelles — cours en présentiel en Belgique et en France, et à distance.">
+<Layout
+  title="Cours de clarinette à Bruxelles"
+  description="Arthur Reynaud-Chanon, professeur de clarinette et de formation musicale à Bruxelles — cours en présentiel en Belgique et en France, et à distance."
+  imageAlt="Arthur Reynaud-Chanon, professeur de clarinette à Bruxelles"
+  preloadImage={arthurPhoto.src}
+>
 
   <!-- HERO -->
   <section class="hero">
