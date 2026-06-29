@@ -55,9 +55,22 @@ import Layout from '../layouts/Layout.astro';
         <div>
           <h2 style="color:var(--navy); font-family:'Playfair Display',serif; font-size:1.4rem; margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid var(--gold);">2. Hébergement</h2>
           <p style="color:#4a4a5a; line-height:1.9;">
-            Ce site est un site statique (généré avec <strong>Astro</strong>) hébergé par :<br>
-            <strong>À compléter</strong> — nom de l'hébergeur, adresse, site web.
+            Ce site est un site statique (généré avec <strong>Astro</strong>) hébergé par :
           </p>
+          <div style="background:rgba(201,168,76,0.05); border:1px solid rgba(201,168,76,0.2); border-radius:8px; padding:24px 28px; display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; gap:12px;">
+              <span style="font-weight:600; color:var(--navy); min-width:120px;">Société</span>
+              <span style="color:#4a4a5a;">Infomaniak Network SA</span>
+            </div>
+            <div style="display:flex; gap:12px;">
+              <span style="font-weight:600; color:var(--navy); min-width:120px;">Adresse</span>
+              <span style="color:#4a4a5a;">Rue Eugène-Marziano 25, 1227 Les Acacias (Genève), Suisse</span>
+            </div>
+            <div style="display:flex; gap:12px;">
+              <span style="font-weight:600; color:var(--navy); min-width:120px;">Site web</span>
+              <a href="https://www.infomaniak.com" target="_blank" rel="noopener" style="color:var(--gold-dark); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.4);">www.infomaniak.com</a>
+            </div>
+          </div>
         </div>
 
         <!-- 3. PROPRIÉTÉ INTELLECTUELLE -->
@@ -101,16 +114,20 @@ import Layout from '../layouts/Layout.astro';
         <div>
           <h2 style="color:var(--navy); font-family:'Playfair Display',serif; font-size:1.4rem; margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid var(--gold);">5. Données personnelles & RGPD</h2>
           <p style="color:#4a4a5a; line-height:1.9; margin-bottom:16px;">
-            Ce site est un site <strong>purement informatif</strong>. Il ne collecte, ne traite et ne stocke <strong>aucune donnée personnelle</strong> :
+            Ce site collecte des données personnelles de manière limitée et uniquement dans le cadre suivant :
           </p>
           <ul style="color:#4a4a5a; line-height:2; padding-left:24px; margin-bottom:16px;">
-            <li>Aucun formulaire de contact ou d'inscription n'est présent sur le site.</li>
-            <li>Aucun compte utilisateur n'est créé ou géré.</li>
+            <li>
+              <strong>Formulaire de contact</strong> — les informations renseignées (prénom, nom, adresse e-mail, message) sont transmises via le service tiers <strong>Formspree</strong> (Formspree Inc., États-Unis) à l'adresse e-mail de l'éditeur, dans le seul but de répondre à votre demande. Ces données ne sont ni revendues, ni utilisées à des fins commerciales.
+            </li>
+            <li>Aucun compte utilisateur n'est créé ou géré sur ce site.</li>
             <li>Aucun outil d'analyse ou de statistiques de fréquentation n'est installé.</li>
-            <li>Aucune adresse e-mail, nom ou donnée d'identification n'est recueillie automatiquement.</li>
           </ul>
+          <p style="color:#4a4a5a; line-height:1.9; margin-bottom:16px;">
+            Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi belge du 30 juillet 2018, vous disposez d'un droit d'accès, de rectification et d'effacement de vos données. Pour exercer ces droits, contactez l'éditeur à l'adresse : <a href="mailto:arthur.reynaudchanon@gmail.com" style="color:var(--gold-dark); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.4);">arthur.reynaudchanon@gmail.com</a>.
+          </p>
           <p style="color:#4a4a5a; line-height:1.9;">
-            Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi belge du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel, aucune déclaration à l'Autorité de Protection des Données n'est requise pour ce site.
+            Le transfert de données vers Formspree Inc. (États-Unis) s'effectue dans le respect des garanties appropriées prévues par le RGPD. Pour en savoir plus : <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener" style="color:var(--gold-dark); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.4);">politique de confidentialité de Formspree</a>.
           </p>
         </div>
 
@@ -120,8 +137,11 @@ import Layout from '../layouts/Layout.astro';
           <p style="color:#4a4a5a; line-height:1.9; margin-bottom:16px;">
             Ce site <strong>ne dépose aucun cookie</strong> propre sur votre navigateur.
           </p>
-          <p style="color:#4a4a5a; line-height:1.9;">
+          <p style="color:#4a4a5a; line-height:1.9; margin-bottom:16px;">
             Certaines pages intègrent des vidéos hébergées sur YouTube (Google LLC). Ces lecteurs vidéo tiers sont susceptibles de déposer des cookies sur votre appareil lors de la lecture d'une vidéo, conformément à la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--gold-dark); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.4);">politique de confidentialité de Google</a>. Ces cookies échappent au contrôle de l'éditeur de ce site.
+          </p>
+          <p style="color:#4a4a5a; line-height:1.9;">
+            Le service <strong>Formspree</strong>, utilisé pour le formulaire de contact, peut également déposer des cookies techniques à des fins de protection contre le spam lors de la soumission du formulaire, conformément à la <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener" style="color:var(--gold-dark); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.4);">politique de confidentialité de Formspree</a>.
           </p>
         </div>
 
@@ -144,7 +164,7 @@ import Layout from '../layouts/Layout.astro';
           </p>
         </div>
 
-        <!-- 8. CONTACT -->
+        <!-- 9. CONTACT -->
         <div style="background:rgba(201,168,76,0.05); border:1px solid rgba(201,168,76,0.2); border-radius:8px; padding:28px;">
           <h2 style="color:var(--navy); font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:12px;">Une question ?</h2>
           <p style="color:#4a4a5a; line-height:1.9; margin:0;">
