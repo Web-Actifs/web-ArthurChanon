@@ -78,6 +78,84 @@ import arthurImg from '../pics/Arthur.jpg';
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Questions fréquentes</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div style="max-width:700px; margin:0 auto;" class="reveal">
+        <div style="display:flex; flex-direction:column; gap:24px;">
+
+          <div style="border-left:4px solid var(--gold); padding-left:24px;">
+            <h4 style="color:var(--navy); margin:0 0 10px; font-size:1rem;">À quel âge commencer la clarinette ?</h4>
+            <p style="color:#4a4a5a; font-size:0.92rem; margin:0; line-height:1.6;">À partir de 7 ans environ, lorsque l'enfant a la maturité nécessaire. Mais aussi pour les adultes qui réalisent un rêve musical — je m'adapte à tous les profils et à tous les âges.</p>
+          </div>
+
+          <div style="border-left:4px solid var(--gold); padding-left:24px;">
+            <h4 style="color:var(--navy); margin:0 0 10px; font-size:1rem;">Où se déroulent les cours ?</h4>
+            <p style="color:#4a4a5a; font-size:0.92rem; margin:0; line-height:1.6;">Je propose des cours en présentiel à Bruxelles, Belgique et en France, ainsi que des cours à distance dans toutes les langues (Français, English, Polski, Español).</p>
+          </div>
+
+          <div style="border-left:4px solid var(--gold); padding-left:24px;">
+            <h4 style="color:var(--navy); margin:0 0 10px; font-size:1rem;">Y a-t-il un premier cours d'essai ?</h4>
+            <p style="color:#4a4a5a; font-size:0.92rem; margin:0; line-height:1.6;">Oui, le premier cours est sans engagement — c'est l'occasion de faire connaissance et de parler ensemble de votre projet musical.</p>
+          </div>
+
+          <div style="border-left:4px solid var(--gold); padding-left:24px;">
+            <h4 style="color:var(--navy); margin:0 0 10px; font-size:1rem;">Faut-il avoir son propre instrument ?</h4>
+            <p style="color:#4a4a5a; font-size:0.92rem; margin:0; line-height:1.6;">Pas pour débuter. Je peux vous conseiller sur l'acquisition d'un instrument adapté à votre progression. Pour les cours avancés, un instrument personnel est recommandé.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire de contact -->
+  <section class="section section-alt">
+    <div class="container" style="max-width:600px;">
+      <div class="section-header reveal">
+        <h2>Envoyez-moi un message</h2>
+        <p>Une demande spécifique ? Remplissez le formulaire ci-dessous.</p>
+        <div class="divider"></div>
+      </div>
+
+      <form action="https://formspree.io/f/xyzpqwkj" method="POST" style="display:flex; flex-direction:column; gap:20px;" class="reveal">
+
+        <div>
+          <label for="name" style="display:block; font-size:0.85rem; font-weight:600; color:var(--navy); margin-bottom:8px;">Votre nom</label>
+          <input type="text" id="name" name="name" required style="width:100%; padding:12px 16px; border:1px solid var(--ivory-dark); border-radius:6px; font-size:0.95rem; font-family:inherit; box-sizing:border-box;">
+        </div>
+
+        <div>
+          <label for="email" style="display:block; font-size:0.85rem; font-weight:600; color:var(--navy); margin-bottom:8px;">Votre email</label>
+          <input type="email" id="email" name="email" required style="width:100%; padding:12px 16px; border:1px solid var(--ivory-dark); border-radius:6px; font-size:0.95rem; font-family:inherit; box-sizing:border-box;">
+        </div>
+
+        <div>
+          <label for="subject" style="display:block; font-size:0.85rem; font-weight:600; color:var(--navy); margin-bottom:8px;">Sujet</label>
+          <select id="subject" name="subject" required style="width:100%; padding:12px 16px; border:1px solid var(--ivory-dark); border-radius:6px; font-size:0.95rem; font-family:inherit; box-sizing:border-box; background:var(--white);">
+            <option value="">Choisir un sujet...</option>
+            <option value="Cours particuliers">Cours particuliers</option>
+            <option value="Prestation événementielle">Prestation événementielle</option>
+            <option value="Question générale">Question générale</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" style="display:block; font-size:0.85rem; font-weight:600; color:var(--navy); margin-bottom:8px;">Message</label>
+          <textarea id="message" name="message" rows="5" required style="width:100%; padding:12px 16px; border:1px solid var(--ivory-dark); border-radius:6px; font-size:0.95rem; font-family:inherit; box-sizing:border-box; resize:vertical;"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
   <!-- Plateformes -->
   <section class="section section-alt">
     <div class="container">
