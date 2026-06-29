@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const testimonials = [
+  {
+    stars: 5,
+    text: "J'ai commencé la clarinette à 42 ans, persuadée qu'il était trop tard. Arthur a su me prouver le contraire avec une patience et une pédagogie remarquables. Trois ans plus tard, je joue dans un ensemble amateur et chaque répétition est un bonheur. Il a cette capacité rare de rendre accessible ce qui semble complexe, sans jamais sacrifier l'exigence.",
+    name: "Claire Dumont",
+    role: "Élève adulte, 3 ans de pratique",
+    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+  },
+  {
+    stars: 5,
+    text: "Notre fils Lucas a intégré le conservatoire cette année grâce à la préparation d'Arthur. Au-delà de la technique, il lui a transmis une vraie passion pour la musique et une discipline de travail qui lui sert dans tous les domaines. Les cours sont toujours stimulants, jamais rébarbatifs, et Lucas attend chaque semaine avec impatience.",
+    name: "Thomas & Nathalie Mercier",
+    role: "Parents d'élève, entrée au CRR",
+    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+  },
+  {
+    stars: 5,
+    text: "En tant qu'étudiante en musicologie, les cours de formation musicale d'Arthur ont complètement transformé ma compréhension des œuvres. Son approche analytique, toujours liée à la pratique, m'a permis de développer une oreille que je ne soupçonnais pas. Ses explications sont claires, imagées, et il sait exactement quand pousser et quand encourager.",
+    name: "Manon Lefebvre",
+    role: "Étudiante en musicologie",
+    photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+  },
+  {
+    stars: 5,
+    text: "Je prépare le CNSM et Arthur m'accompagne depuis deux ans dans cette préparation intensive. Sa connaissance du répertoire, son exigence musicale et sa bienveillance font de lui un pédagogue exceptionnel. Il m'a aidé à développer ma propre identité sonore et à aborder les épreuves avec sérénité. Je lui dois énormément dans mon parcours.",
+    name: "Raphaël Girard",
+    role: "Préparation concours CNSM",
+    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+  },
+  {
+    stars: 5,
+    text: "Arthur a su capter l'intérêt de ma fille de 9 ans dès le premier cours. Elle qui hésitait à se lancer est maintenant la première à demander à travailler sa clarinette. La méthode est progressive, bienveillante et vraiment adaptée à l'enfant. Un professeur exceptionnel.",
+    name: "Isabelle Renaud",
+    role: "Mère d'élève, enfant de 9 ans",
+    photo: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+  },
+  {
+    stars: 5,
+    text: "Après 15 ans sans toucher à ma clarinette, j'ai repris avec Arthur. Il a su me remettre en selle sans me faire sentir nul, en respectant ce que j'avais gardé en mémoire tout en corrigeant les mauvaises habitudes. Sa patience et son humour rendent les cours agréables même dans les moments difficiles.",
+    name: "Patrick Vasseur",
+    role: "Reprise après longue interruption",
+    photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
+  },
+];
+---
+
+<Layout title="Témoignages" description="Avis et témoignages des élèves d'Arthur Chanon, professeur de clarinette à Lyon.">
+
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <span class="hero-label">Retours d'expérience</span>
+      <h1>Ce que disent les élèves</h1>
+      <p>Des parcours variés, une passion commune pour la musique.</p>
+    </div>
+  </section>
+
+  <section class="section testimonials">
+    <div class="container">
+      <div class="testimonials-grid reveal">
+        {testimonials.map(({ stars, text, name, role, photo }) => (
+          <div class="testimonial-card">
+            <div class="testimonial-stars">{'★'.repeat(stars)}</div>
+            <div class="quote-icon">«</div>
+            <p>{text}</p>
+            <div class="testimonial-author">
+              <img src={photo} alt={name}>
+              <div class="info">
+                <h4>{name}</h4>
+                <span>{role}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding:80px 0;">
+    <div class="container" style="text-align:center; max-width:600px; margin:0 auto;">
+      <h2 style="color:var(--navy); margin-bottom:16px;">Envie de les rejoindre ?</h2>
+      <p style="color:var(--text-muted); font-weight:300; margin-bottom:32px;">Premier cours sans engagement. Parlons de votre projet musical.</p>
+      <a href="/contact" class="btn btn-primary">Prendre contact</a>
+    </div>
+  </section>
+
+</Layout>

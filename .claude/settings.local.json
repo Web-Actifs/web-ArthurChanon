@@ -24,7 +24,13 @@
       "Bash(mv \"C:/gui/web/2026/ArthurChanon2/src/pages/biographie.astro\" \"C:/gui/web/2026/ArthurChanon2/src/pages/_archive/\")",
       "Bash(mv \"C:/gui/web/2026/ArthurChanon2/src/pages/galerie.astro\" \"C:/gui/web/2026/ArthurChanon2/src/pages/_archive/\")",
       "Bash(mv \"C:/gui/web/2026/ArthurChanon2/src/pages/temoignages.astro\" \"C:/gui/web/2026/ArthurChanon2/src/pages/_archive/\")",
-      "PowerShell(npm show *)"
+      "PowerShell(npm show *)",
+      "Bash(git check-attr *)",
+      "Bash(git fetch *)",
+      "Bash(git commit *)",
+      "Bash(npm run *)",
+      "PowerShell(git *)",
+      "PowerShell(Copy-Item *)"
     ]
   }
 }

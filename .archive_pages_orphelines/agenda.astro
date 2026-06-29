@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const upcoming = [
+  {
+    day: '14',
+    month: 'Juin',
+    title: "Audition de fin d'année — Élèves débutants & intermédiaires",
+    meta: 'Maison de la Musique, Lyon 6e — 18h00',
+    tag: 'Audition',
+  },
+  {
+    day: '21',
+    month: 'Juin',
+    title: "Audition de fin d'année — Élèves avancés",
+    meta: 'Maison de la Musique, Lyon 6e — 18h00',
+    tag: 'Audition',
+  },
+  {
+    day: '05',
+    month: 'Jul',
+    title: 'Récital — Œuvres pour clarinette et piano',
+    meta: 'Salle Molière, Lyon 2e — 20h30',
+    tag: 'Concert',
+  },
+  {
+    day: '26',
+    month: 'Jul',
+    title: "Stage d'été — Initiation & perfectionnement",
+    meta: 'Studio Arthur Chanon, Lyon 6e — 4 jours consécutifs',
+    tag: 'Stage',
+  },
+  {
+    day: '13',
+    month: 'Sep',
+    title: 'Rentrée 2025 — Inscriptions ouvertes',
+    meta: 'Sur rendez-vous — Studio ou à domicile',
+    tag: 'Info',
+  },
+  {
+    day: '18',
+    month: 'Oct',
+    title: 'Masterclass — Préparation aux concours',
+    meta: 'CRR de Lyon — Sur inscription',
+    tag: 'Masterclass',
+  },
+];
+
+const past = [
+  {
+    day: '12',
+    month: 'Avr',
+    title: 'Concert de chambre — Quintette à vents',
+    meta: "Amphithéâtre de l'Opéra de Lyon",
+    tag: 'Concert',
+  },
+  {
+    day: '02',
+    month: 'Mar',
+    title: 'Audition de mi-année',
+    meta: 'Maison de la Musique, Lyon 6e',
+    tag: 'Audition',
+  },
+  {
+    day: '18',
+    month: 'Jan',
+    title: 'Masterclass publique — Brahms & Poulenc',
+    meta: 'CNSMD de Lyon',
+    tag: 'Masterclass',
+  },
+];
+---
+
+<Layout title="Agenda" description="Concerts, auditions, masterclasses et stages avec Arthur Chanon à Lyon.">
+
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <span class="hero-label">Actualité</span>
+      <h1>Agenda</h1>
+      <p>Prochains concerts, auditions d'élèves, masterclasses et stages.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>À venir</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="events-grid reveal">
+        {upcoming.map(({ day, month, title, meta, tag }) => (
+          <div class="event-card">
+            <div class="event-date">
+              <div class="day">{day}</div>
+              <div class="month">{month}</div>
+            </div>
+            <div class="event-info">
+              <h3>{title}</h3>
+              <div class="event-meta">{meta}</div>
+            </div>
+            <span class="event-tag">{tag}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Événements passés</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="events-grid reveal" style="opacity:0.7;">
+        {past.map(({ day, month, title, meta, tag }) => (
+          <div class="event-card">
+            <div class="event-date">
+              <div class="day">{day}</div>
+              <div class="month">{month}</div>
+            </div>
+            <div class="event-info">
+              <h3>{title}</h3>
+              <div class="event-meta">{meta}</div>
+            </div>
+            <span class="event-tag">{tag}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding:64px 0;">
+    <div class="container" style="text-align:center;">
+      <p style="color:var(--text-muted); margin-bottom:24px; font-weight:300;">Pour être informé des prochains événements, n'hésitez pas à me contacter.</p>
+      <a href="/contact" class="btn btn-primary">Me contacter</a>
+    </div>
+  </section>
+
+</Layout>

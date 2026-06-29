@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const photos = [
+  { src: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=800&q=80', alt: 'Concert clarinette', tall: true },
+  { src: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80', alt: 'Partitions sur pupitre' },
+  { src: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80', alt: 'Scène de concert' },
+  { src: 'https://images.unsplash.com/photo-1525201548942-d8732f6617a0?w=600&q=80', alt: 'Orchestre de chambre', tall: true },
+  { src: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&q=80', alt: 'Studio d\'enregistrement' },
+  { src: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=600&q=80', alt: 'Cours particulier' },
+  { src: 'https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=600&q=80', alt: 'Lecture de partition' },
+  { src: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600&q=80', alt: 'Salle de concert vide' },
+  { src: 'https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=600&q=80', alt: 'Clarinettiste en répétition' },
+];
+---
+
+<Layout title="Galerie" description="Photos de concerts, auditions et cours de clarinette avec Arthur Chanon à Lyon.">
+
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <span class="hero-label">Photos & Vidéos</span>
+      <h1>Galerie</h1>
+      <p>Concerts, auditions, instants de travail et moments partagés.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-grid reveal">
+        {photos.map(({ src, alt, tall }) => (
+          <div class={`gallery-item${tall ? ' tall' : ''}`}>
+            <img src={src} alt={alt} loading="lazy">
+            <div class="overlay"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" style="padding:64px 0;">
+    <div class="container" style="text-align:center;">
+      <h3 style="color:var(--navy); margin-bottom:12px;">Vidéos à venir</h3>
+      <p style="color:var(--text-muted); font-weight:300; max-width:480px; margin:0 auto 28px;">Extraits de concerts, masterclasses filmées et auditions d'élèves. Revenez bientôt ou suivez l'actualité sur les réseaux sociaux.</p>
+      <a href="/agenda" class="btn btn-primary">Voir l'agenda</a>
+    </div>
+  </section>
+
+</Layout>

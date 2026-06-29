@@ -1,0 +1,325 @@
+---
+import Layout from '../layouts/Layout.astro';
+import eventsImg from '../pics/duel-clari.jpg';
+import arthurImg from '../pics/Arthur.jpg';
+---
+
+<Layout title="Compléments" description="Témoignages d'élèves, vidéos de concerts et contact — Arthur Reynaud-Chanon, clarinettiste et professeur.">
+
+  <!-- Backup IMG Avant
+   import eventsImg from '../pics/events.jpg';
+  -->
+
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <span class="hero-label">Pour aller plus loin</span>
+      <h1 class="sr-only">Compléments</h1>
+      <p>Témoignages, concerts et contact — tout ce qu'il faut pour faire connaissance.</p>
+    </div>
+  </section>
+
+  <!-- INTRO avec photo events -->
+  <section class="section">
+    <div class="container">
+      <div class="bio-intro reveal">
+        <div class="bio-intro-image" style="overflow:hidden;">
+          <img
+            src={eventsImg.src}
+            alt="Arthur Reynaud-Chanon en prestation"
+            loading="lazy"
+            style="transform:scale(1.08); object-fit:cover; object-position:center; width:100%; height:100%;"
+          >
+        </div>
+        <div class="bio-intro-text">
+          <span class="hero-label" style="color:var(--gold-dark)">Clarinettiste & pédagogue</span>
+          <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); color:var(--navy); margin-bottom:24px;">Une page pour tout retrouver</h2>
+          <p class="lead">Vous trouverez ici les témoignages de mes élèves, quelques extraits de mes concerts — classiques ou récréatifs — et tous les renseignements pour me contacter.</p>
+          <p>Que ce soit pour un cours, une prestation événementielle ou simplement pour échanger autour de la musique, je réponds avec plaisir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTION 1 : TÉMOIGNAGES
+  ============================== -->
+  <section class="section section-alt" id="temoignages">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="hero-label" style="color:var(--gold-dark)">Ils témoignent</span>
+        <h2>Ce que mes élèves pensent de moi</h2>
+        <p>Rien ne vaut la parole de ceux qui ont suivi l'enseignement de près — en voici quelques-uns, en vidéo.</p>
+        <div class="divider"></div>
+      </div>
+
+      <!-- 3 Shorts -->
+      <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:32px;" class="reveal">
+
+        <div style="width:240px; flex-shrink:0; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+          <div style="position:relative; aspect-ratio:9/16;">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/KdYtB57uUsw"
+              title="Témoignage élève 1"
+              width="100%" height="100%"
+              style="position:absolute; top:0; left:0; border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div style="width:240px; flex-shrink:0; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+          <div style="position:relative; aspect-ratio:9/16;">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/fT1x9GZ5FAY"
+              title="Témoignage élève 2"
+              width="100%" height="100%"
+              style="position:absolute; top:0; left:0; border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div style="width:240px; flex-shrink:0; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+          <div style="position:relative; aspect-ratio:9/16;">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/b6tO5MDQ4xs"
+              title="Témoignage élève 3"
+              width="100%" height="100%"
+              style="position:absolute; top:0; left:0; border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 1 vidéo régulière -->
+      <div style="max-width:700px; margin:0 auto; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);" class="reveal">
+        <div style="position:relative; aspect-ratio:16/9;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/07RwmHWZxKY"
+            title="Témoignage élève 4"
+            width="100%" height="100%"
+            style="position:absolute; top:0; left:0; border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- TÉMOIGNAGES ÉCRITS -->
+      <div style="margin-top:72px;" class="reveal">
+        <h3 style="text-align:center; color:var(--navy); font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:8px;">Avis écrits</h3>
+        <p style="text-align:center; color:var(--text-muted); font-weight:300; margin-bottom:40px; max-width:560px; margin-left:auto; margin-right:auto;">De vraies paroles d'élèves, pour ceux qui préfèrent lire.</p>
+
+        <div class="temoignages-grid">
+
+          <article class="temoignage-card" itemscope itemtype="https://schema.org/Review">
+            <meta itemprop="reviewRating" content="5">
+            <div class="temoignage-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote class="temoignage-body" itemprop="reviewBody">
+              Depuis 6 ans déjà, Arthur est mon professeur de clarinette. Lorsque je l'ai rencontré pour la première fois, je lui ai dit que mon objectif était de pouvoir souffler correctement dans une clarinette alors que je n'avais jamais fait de solfège. Arthur est un vrai professeur qui sait se mettre au niveau de son élève et qui le fait progresser avec persévérance, ce qui me permet aujourd'hui, par exemple d'aborder l'étude d'une gamme aussi complexe que celle du do♯ mineur. Je suis très reconnaissant envers Arthur de m'avoir fait voyager dans ce monde universel qu'est la musique.
+            </blockquote>
+            <footer class="temoignage-footer" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <span class="temoignage-name" itemprop="name">Philippe Jacob</span>
+              <span class="temoignage-since">Clarinette · Élève depuis 6 ans</span>
+            </footer>
+          </article>
+
+          <article class="temoignage-card" itemscope itemtype="https://schema.org/Review">
+            <meta itemprop="reviewRating" content="5">
+            <div class="temoignage-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote class="temoignage-body" itemprop="reviewBody">
+              I am the father of a student of Arthur. He was tutoring my son in the clarinet for three years. During those three years, we were very happy and also impressed by Arthur's dedication to teach. He was very flexible, very dedicated to his students. He was also very knowledgeable and obviously very skilled in music. He focused on music theory but also on improvisation, breathing technique and other things that are vital.
+            </blockquote>
+            <footer class="temoignage-footer" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <span class="temoignage-name" itemprop="name">Jorgen Roed-Lisbelo</span>
+              <span class="temoignage-since">Clarinette · 3 ans de cours</span>
+            </footer>
+          </article>
+
+          <article class="temoignage-card" itemscope itemtype="https://schema.org/Review">
+            <meta itemprop="reviewRating" content="5">
+            <div class="temoignage-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote class="temoignage-body" itemprop="reviewBody">
+              Arthur me donne cours de saxophone depuis quelques années. C'est un bon professeur car il sait adapter son enseignement aux difficultés que je rencontre — qu'elles soient d'ordre rythmique ou de doigté. Il sait être à la fois exigeant et bienveillant. Il m'encourage pour permettre ma progression et aime transmettre sa passion, donne de bons conseils et me pousse à me dépasser. Il laisse aussi une place à la créativité, ce qui me permet d'avancer dans ma progression musicale.
+            </blockquote>
+            <footer class="temoignage-footer" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <span class="temoignage-name" itemprop="name">Frédéric Denèvre</span>
+              <span class="temoignage-since">Saxophone · Élève depuis plusieurs années</span>
+            </footer>
+          </article>
+
+          <article class="temoignage-card" itemscope itemtype="https://schema.org/Review">
+            <meta itemprop="reviewRating" content="5">
+            <div class="temoignage-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote class="temoignage-body" itemprop="reviewBody">
+              Arthur a été mon professeur de clarinette de mes 8 ans à mes 18 ans. Je n'aurais jamais espéré une progression aussi grande. Il a une grande capacité d'adaptation à chacun de ses élèves. Au début c'était plutôt une pédagogie autour du jeu, comme j'étais un enfant, mais après il a toujours adapté son cours à mon âge et à mes besoins. Son cours est vraiment le mix parfait entre le travail et l'amusement.
+            </blockquote>
+            <footer class="temoignage-footer" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <span class="temoignage-name" itemprop="name">Daniel Hagleitner</span>
+              <span class="temoignage-since">Clarinette · 10 ans de cours</span>
+            </footer>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTION 2 : CONCERTS
+  ============================== -->
+  <section class="section" id="concerts">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="hero-label" style="color:var(--gold-dark)">Sur scène</span>
+        <h2>Concerts</h2>
+        <div class="divider"></div>
+      </div>
+
+      <!-- Classique -->
+      <div style="margin-bottom:56px;">
+        <h3 style="color:var(--navy); font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:8px; text-align:center;">Classique</h3>
+        <p style="text-align:center; color:var(--text-muted); font-weight:300; margin-bottom:28px;">De la musique de chambre aux œuvres orchestrales — la clarinette au cœur du répertoire classique.</p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:900px; margin:0 auto;" class="reveal">
+
+          <div style="border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+            <div style="position:relative; aspect-ratio:16/9;">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/QvT3OQjhn_E"
+                title="Concert classique 1"
+                width="100%" height="100%"
+                style="position:absolute; top:0; left:0; border:0;"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div style="border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+            <div style="position:relative; aspect-ratio:16/9;">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/xNDrAoORX6o"
+                title="Concert classique 2"
+                width="100%" height="100%"
+                style="position:absolute; top:0; left:0; border:0;"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Récréatif -->
+      <div class="reveal">
+        <h3 style="color:var(--navy); font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:8px; text-align:center;">Récréatif</h3>
+        <p style="text-align:center; color:var(--text-muted); font-weight:300; margin-bottom:28px;">Le groupe <strong style="color:var(--navy);">« Techno F »</strong> — quand la clarinette quitte les salles de concert pour la scène électro.</p>
+
+        <div style="max-width:340px; margin:0 auto; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+          <div style="position:relative; aspect-ratio:9/16;">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/aFwY7FSCvKg"
+              title="Techno F"
+              width="100%" height="100%"
+              style="position:absolute; top:0; left:0; border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTION 3 : CONTACT
+  ============================== -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="hero-label" style="color:var(--gold-dark)">Échangeons</span>
+         <!-- <h2>Contact</h2> -->
+        <p>Cours particuliers, prestation événementielle ou simple question — je réponds avec plaisir.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; max-width:900px; margin:0 auto;" class="reveal">
+
+        <!-- Photo Arthur -->
+        <div style="border-radius:12px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.12); aspect-ratio:3/4;">
+          <img
+            src={arthurImg.src}
+            alt="Arthur Reynaud-Chanon"
+            loading="lazy"
+            style="width:100%; height:100%; object-fit:cover; object-position:center 15%; transform:scale(1.06);"
+          >
+        </div>
+
+        <!-- Coordonnées -->
+        <div>
+          <h3 style="color:var(--navy); font-family:'Playfair Display',serif; font-size:1.6rem; margin-bottom:8px;">Arthur Reynaud-Chanon</h3>
+          <p style="color:var(--text-muted); font-weight:300; margin-bottom:32px;">Professeur de clarinette & formation musicale</p>
+
+          <div style="display:flex; flex-direction:column; gap:20px;">
+
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="background:rgba(201,168,76,0.1); width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--gold);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div style="font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); margin-bottom:2px;">E-mail</div>
+                <a href="mailto:arthur.reynaudchanon@gmail.com" style="font-size:0.98rem; color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.4);">arthur.reynaudchanon@gmail.com</a>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="background:rgba(201,168,76,0.1); width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--gold);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <div style="font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); margin-bottom:2px;">Téléphone</div>
+                <div style="font-size:0.98rem; color:var(--navy);">+33 6 33 18 45 84</div>
+                <div style="font-size:0.98rem; color:var(--navy);">+32 473 44 71 86</div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="background:rgba(201,168,76,0.1); width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--gold);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              </div>
+              <div>
+                <div style="font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); margin-bottom:2px;">Langues</div>
+                <div style="font-size:0.98rem; color:var(--navy);">Français, English, Polski, Español</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top:32px; padding:20px 24px; background:rgba(201,168,76,0.06); border:1px solid rgba(201,168,76,0.2); border-radius:8px;">
+            <p style="font-size:0.88rem; color:#4a4a5a; margin:0; font-style:italic; font-family:'Playfair Display',serif; line-height:1.7;">
+              « Premier cours sans engagement — l'occasion de faire connaissance et de parler de votre projet musical. »
+            </p>
+            <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:1rem; color:var(--gold-dark); letter-spacing:1px; margin:12px 0 0;">A R-C</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
